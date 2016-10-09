@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app='languages' lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body ng-controller='mainCtrl'>
+
+<button ng-click="getLanguages()">Show All</button>
+<input type='text' name="name" placeholder="Name" ng-model="name">
+<button type="submit" ng-click="findLanguage(name)">Find By Name</button>
+
+<ul>
+  <li ng-repeat='language in languages'>
+    <h3>{{language.name}}</h3>
+    <p>TypeSafe? {{language.typeSafe}}</p>
+    <p>Companies Using: {{language.companiesUsing}}</p>
+  </li>
+</ul>
+
+<input type="text" placeholder='name' ng-model='newLanguage.name'>
+<input type="text" placeholder='typesage: true or false' ng-model='newLanguage.typeSafe'>
+
+<button type='submit' ng-click='addLanguage(newLanguage)'>Add Language</button>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
+
+
+<script src="app.js" charset="utf-8"></script>
+<script src="mainCtrl.js" charset="utf-8"></script>
+<script src="mainService.js" charset="utf-8"></script>
+</body>
+</html>
